@@ -1,10 +1,9 @@
-
-import axios from "axios";
 import { useEffect, useState } from "react";
 import List from "../../components/list/List";
 import Navbar from "../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
 import "./latest.scss";
+import { axiosInstance } from "../../config";
 
 export const Latest = ({type}) => {
   const[lists,setLists] = useState([]);
@@ -12,7 +11,7 @@ export const Latest = ({type}) => {
   useEffect(()=>{
     const getRandomLists = async ()=>{
       try {
-        const res = await axios.get(`lists${type ? "?type="+type:""}`
+        const res = await axiosInstance.get(`lists${type ? "?type="+type:""}`
         ,{
           headers:{
             token:"Bearer "+ JSON.parse(localStorage.getItem("user")).accessToken,

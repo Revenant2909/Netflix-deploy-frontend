@@ -1,10 +1,10 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import Featured from "../../components/featured/Featured";
 import List from "../../components/list/List";
 import Navbar from "../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
 import "./home.scss";
+import { axiosInstance } from "../../config";
 
 export const Home = ({type}) => {
   const[lists,setLists] = useState([]);
@@ -13,7 +13,7 @@ export const Home = ({type}) => {
   useEffect(()=>{
     const getRandomLists = async ()=>{
       try {
-        const res = await axios.get(`lists${type ? "?type="+type:""}
+        const res = await axiosInstance.get(`lists${type ? "?type="+type:""}
         ${genre ? "&genre=" + genre:""}`,{
           headers:{
             token:"Bearer "+ JSON.parse(localStorage.getItem("user")).accessToken,
