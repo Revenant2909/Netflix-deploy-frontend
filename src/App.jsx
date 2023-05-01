@@ -23,7 +23,6 @@ const App = () => {
         <Route  path="/series"> <Home type="series"/> </Route>
         <Route  path="/watch"> <Watch/> </Route>
         <Route  path="/latest"> <Latest/> </Route> */}
-        </>
       
         <Route exact path="/"> {user ? <Home/> : <Redirect to="/register"/>}  </Route>
         <Route  path="/register">  {!user ? <Register/> : <Redirect to="/"/>   }  </Route>
@@ -36,6 +35,7 @@ const App = () => {
         <Route  path="/latest"> <Latest/> </Route>
         </>
          )} 
+         </>
       </Switch>
     </Router>
   );
