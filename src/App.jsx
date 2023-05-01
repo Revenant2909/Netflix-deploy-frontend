@@ -16,16 +16,16 @@ const App = () => {
     <Router>
       <Switch>
          <>
-        <Route exact path="/"><Home/>  </Route>
+        {/* <Route exact path="/"><Home/>  </Route>
         <Route  path="/register">  <Register/>  </Route>
         <Route  path="/login"> <Login/>  </Route>
         <Route  path="/movies"> <Home type="movie"/> </Route>
         <Route  path="/series"> <Home type="series"/> </Route>
         <Route  path="/watch"> <Watch/> </Route>
-        <Route  path="/latest"> <Latest/> </Route>
+        <Route  path="/latest"> <Latest/> </Route> */}
         </>
       
-        {/* <Route exact path="/"> {user ? <Home/> : <Redirect to="/register"/>}  </Route>
+        <Route exact path="/"> {user ? <Home/> : <Redirect to="/register"/>}  </Route>
         <Route  path="/register">  {!user ? <Register/> : <Redirect to="/"/>   }  </Route>
         <Route  path="/login"> {!user ?  <Login/> : <Redirect to="/"/> }   </Route>
          {user && (
@@ -35,7 +35,7 @@ const App = () => {
         <Route  path="/watch"> <Watch/> </Route>
         <Route  path="/latest"> <Latest/> </Route>
         </>
-         )}  */}
+         )} 
       </Switch>
     </Router>
   );
